@@ -31,5 +31,4 @@ public class PessoaEntity {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_pessoa", referencedColumnName = "id")
     private List<AnimalEntity> animaisPessoa;
-
 }
