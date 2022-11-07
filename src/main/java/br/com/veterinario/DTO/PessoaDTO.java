@@ -1,7 +1,6 @@
 package br.com.veterinario.DTO;
 
 import br.com.veterinario.entity.PessoaEntity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

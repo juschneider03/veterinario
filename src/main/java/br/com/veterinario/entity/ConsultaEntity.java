@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -36,5 +37,5 @@ public class ConsultaEntity {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_consulta", referencedColumnName = "id")
-    private List<RemedioEntity> remedioConsulta;
+    private List<RemedioEntity> remedioConsulta = new ArrayList(0);
 }
