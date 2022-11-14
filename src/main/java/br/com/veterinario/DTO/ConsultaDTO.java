@@ -28,5 +28,4 @@ public class ConsultaDTO {
         this.idTipoConsulta = consulta.getTipoConsulta().getId();
         this.remedioConsulta = consulta.getRemedioConsulta();
     }
-
 }
