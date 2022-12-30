@@ -19,6 +19,8 @@ public class ConsultaDTO {
     private Long idClinicaMedico;
     private Long idTipoConsulta;
     private List<RemedioEntity> remedioConsulta;
+    private Long idPessoa;
+    private Long idClinica;
 
     public ConsultaDTO(ConsultaEntity consulta){
         this.observacoes = consulta.getObservacoes();
@@ -27,5 +29,6 @@ public class ConsultaDTO {
         this.idClinicaMedico = consulta.getClinicaMedico().getId();
         this.idTipoConsulta = consulta.getTipoConsulta().getId();
         this.remedioConsulta = consulta.getRemedioConsulta();
+        this.idPessoa =
     }
 }

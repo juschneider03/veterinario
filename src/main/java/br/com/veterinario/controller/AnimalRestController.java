@@ -1,10 +1,11 @@
 package br.com.veterinario.controller;
 
+import br.com.veterinario.DTO.AnimalDTO;
 import br.com.veterinario.entity.AnimalEntity;
 import br.com.veterinario.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -16,7 +17,12 @@ public class AnimalRestController {
     private AnimalService animalService;
 
     @PostMapping(value = "/animal")
-    public void salvarAnimal(@RequestBody AnimalEntity animalEntity) {
+    public void salvarAnimal(  AnimalEntity animalEntity) {
         animalService.salvarAnimal(animalEntity);
+    }
+
+    @GetMapping(value = "/clinicas")
+    public List<AnimalDTO> buscarTodosAnimais() {
+        return animalService.buscarTodosAnimais();
     }
 }
