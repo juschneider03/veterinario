@@ -19,7 +19,7 @@ public class AnimalRestController {
         animalService.salvarAnimal(animalEntity);
     }
 
-    @GetMapping(value = "/clinicas")
+    @GetMapping(value = "animais")
     public List<AnimalDTO> buscarTodosAnimais() {
         return animalService.buscarTodosAnimais();
     }
