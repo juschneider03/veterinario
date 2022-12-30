@@ -23,4 +23,10 @@ public class ConsultaService {
                 new ConsultaDTO(consulta)).collect(Collectors.toList());
         return consultaDTOS;
     }
+
+    public void deletarConsulta(Long idConsulta){
+        ConsultaEntity consulta = new ConsultaEntity();
+        consulta.setId(idConsulta);
+        consultaRepository.delete(consulta);
+    }
 }

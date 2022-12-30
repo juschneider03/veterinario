@@ -29,6 +29,5 @@ public class ConsultaDTO {
         this.idClinicaMedico = consulta.getClinicaMedico().getId();
         this.idTipoConsulta = consulta.getTipoConsulta().getId();
         this.remedioConsulta = consulta.getRemedioConsulta();
-        this.idPessoa =
     }
 }

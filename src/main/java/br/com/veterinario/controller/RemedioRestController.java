@@ -4,6 +4,7 @@ import br.com.veterinario.DTO.RemedioDTO;
 import br.com.veterinario.entity.RemedioEntity;
 import br.com.veterinario.service.RemedioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,4 +25,7 @@ public class RemedioRestController {
     public List<RemedioDTO> buscarTodosRemedios(){
         return remedioService.buscartTodosRemedios();
     }
+
+    @DeleteMapping(value = "/{idRemedio}")
+    public void deletarRemedio(Long idRemedio){ remedioService.deletarRemedio(idRemedio); }
 }

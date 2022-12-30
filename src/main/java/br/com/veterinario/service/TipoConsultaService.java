@@ -25,4 +25,10 @@ public class TipoConsultaService {
                 new TipoConsultaDTO(tipoConsulta)).collect(Collectors.toList());
         return tipoConsultaDTO;
     }
+
+    public void deletarTipoConsulta(Long idTipoConsulta){
+        TipoConsultaEntity tipoConsulta = new TipoConsultaEntity();
+        tipoConsulta.setId(idTipoConsulta);
+        tipoConsultaRepository.delete(tipoConsulta);
+    }
 }

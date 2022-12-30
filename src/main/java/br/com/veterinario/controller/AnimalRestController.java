@@ -4,9 +4,7 @@ import br.com.veterinario.DTO.AnimalDTO;
 import br.com.veterinario.entity.AnimalEntity;
 import br.com.veterinario.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +22,10 @@ public class AnimalRestController {
     @GetMapping(value = "/clinicas")
     public List<AnimalDTO> buscarTodosAnimais() {
         return animalService.buscarTodosAnimais();
+    }
+
+    @DeleteMapping(value = "/{idAnimal}")
+    public void deletarAnimal (@PathVariable Long idAnimal){
+        animalService.deletarAnimal(idAnimal);
     }
 }

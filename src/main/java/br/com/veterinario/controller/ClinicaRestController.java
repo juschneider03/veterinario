@@ -4,10 +4,7 @@ import br.com.veterinario.DTO.ClinicaDTO;
 import br.com.veterinario.entity.ClinicaEntity;
 import br.com.veterinario.service.ClinicaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,10 @@ public class ClinicaRestController {
     @PostMapping(value = "/clinica")
     public void salvarClinica(@RequestBody ClinicaEntity clinicaEntity) {
         clinicaService.salvarClinica(clinicaEntity);
+    }
+
+    @DeleteMapping(value = "/{idClinica}")
+    public void deletarClinica(Long idClinica){
+        clinicaService.deletarClinica(idClinica);
     }
 }

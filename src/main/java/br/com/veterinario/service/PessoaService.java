@@ -28,4 +28,10 @@ public class PessoaService {
     public void salvarPessoa(PessoaEntity pessoaEntity){
         pessoaRepository.save(pessoaEntity);
     }
+
+    public void deletarPessoa(Long idPessoa){
+        PessoaEntity pessoa = new PessoaEntity();
+        pessoa.setId(idPessoa);
+        pessoaRepository.delete(pessoa);
+    }
 }

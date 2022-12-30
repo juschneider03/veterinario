@@ -14,15 +14,21 @@ public class RemedioService {
     @Autowired
     private RemedioRepository remedioRepository;
 
-    public void salvarRemedio(RemedioEntity remedioEntity){
+    public void salvarRemedio(RemedioEntity remedioEntity) {
         remedioRepository.save(remedioEntity);
     }
 
-    public List<RemedioDTO> buscartTodosRemedios(){
+    public List<RemedioDTO> buscartTodosRemedios() {
         List<RemedioEntity> remedios = remedioRepository.findAll();
 
         List<RemedioDTO> remediosDTO = remedios.stream().map(remedio ->
                 new RemedioDTO(remedio)).collect(Collectors.toList());
         return remediosDTO;
+    }
+
+    public void deletarRemedio(Long idRemedio) {
+        RemedioEntity remedio = new RemedioEntity();
+        remedio.setId(idRemedio);
+        remedioRepository.delete(remedio);
     }
 }

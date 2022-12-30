@@ -24,4 +24,10 @@ public class AnimalService {
         ).collect(Collectors.toList());
         return animaisDTO;
     }
+
+    public void deletarAnimal(Long idAnimal){
+        AnimalEntity animal = new AnimalEntity();
+        animal.setId(idAnimal);
+        animalRepository.delete(animal);
+    }
 }

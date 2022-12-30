@@ -25,4 +25,10 @@ public class ClinicaService {
         ).collect(Collectors.toList());
         return clinicasDTO;
     }
+
+    public void deletarClinica(Long idClinica){
+        ClinicaEntity clinica = new ClinicaEntity();
+        clinica.setId(idClinica);
+        clinicaRepository.delete(clinica);
+    }
 }

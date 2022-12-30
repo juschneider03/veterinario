@@ -4,6 +4,7 @@ import br.com.veterinario.DTO.ConsultaDTO;
 import br.com.veterinario.entity.ConsultaEntity;
 import br.com.veterinario.service.ConsultaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,4 +25,7 @@ public class ConsultaRestController {
     public List<ConsultaDTO> buscarTodasConsultas(){
         return consultaService.buscarTodasConsultas();
     }
+
+    @DeleteMapping(value = "/{idConsulta}")
+    public void deletarConsulta(Long idConsulta){ consultaService.deletarConsulta(idConsulta); }
 }
